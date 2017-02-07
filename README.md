@@ -1,28 +1,29 @@
 # Pipedrive
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pipedrive`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem wrap the RESTful Pipedrive API v1. 
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'pipedrive'
+gem 'pipedrive', :git => 'https://github.com/gabrielmbarboza/pipedrive-client.git'
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install pipedrive
-
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+Pipedrive::Authorization.login(my_email, my_password)
+```
+or
+
+```ruby
+Pipedrive::Authorization.authenticate(my_token)
+```
 
 ## Development
 
