@@ -1,6 +1,6 @@
 # Pipedrive
 
-This gem wrap the RESTful Pipedrive API v1. 
+This gem wrap the RESTful Pipedrive API v1.
 
 ## Installation
 
@@ -23,6 +23,10 @@ or
 
 ```ruby
 Pipedrive::Authorization.authenticate(my_token)
+```
+
+```ruby
+Pipedrive::Person.all
 ```
 
 ## Development
