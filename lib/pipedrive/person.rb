@@ -11,6 +11,10 @@ module Pipedrive
       def find(id)
         get "/persons/#{id}"
       end
+
+      def add(opts = {})
+        post "/persons", body: opts
+      end
     end
   end
 end
