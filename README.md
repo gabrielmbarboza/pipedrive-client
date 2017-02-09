@@ -17,16 +17,15 @@ And then execute:
 ## Usage
 
 ```ruby
-Pipedrive::Authorization.login(my_email, my_password)
-```
-or
-
-```ruby
-Pipedrive::Authorization.authenticate(my_token)
+Pipedrive.authenticate(my_token)
 ```
 
 ```ruby
 Pipedrive::Person.all
+```
+
+```ruby
+Pipedrive::Person.find 1
 ```
 
 ## Development
