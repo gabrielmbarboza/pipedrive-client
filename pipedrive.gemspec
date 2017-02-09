@@ -33,7 +33,6 @@ Gem::Specification.new do |spec|
     "Rakefile",
     "lib/pipedrive/version.rb",
     "lib/pipedrive.rb",
-    "lib/pipedrive/authorization.rb",
     "lib/pipedrive/base.rb",
     "lib/pipedrive/person.rb",
     "pipedrive.gemspec"
