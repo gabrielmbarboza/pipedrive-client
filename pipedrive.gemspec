@@ -35,6 +35,8 @@ Gem::Specification.new do |spec|
     "lib/pipedrive.rb",
     "lib/pipedrive/base.rb",
     "lib/pipedrive/person.rb",
+    "lib/pipedrive/deal.rb",
+    "lib/pipedrive/note.rb",
     "pipedrive.gemspec"
   ]
   spec.bindir        = "exe"
