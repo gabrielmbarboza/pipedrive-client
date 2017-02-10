@@ -1,4 +1,5 @@
 require "httparty"
+require "ostruct"
 
 module Pipedrive
 
@@ -8,7 +9,7 @@ module Pipedrive
    "Content-Type"  => "application/x-www-form-urlencoded"
   }
 
-  class Base
+  class Base < OpenStruct
     include HTTParty
 
     base_uri "https://api.pipedrive.com/v1"
