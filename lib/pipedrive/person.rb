@@ -26,6 +26,16 @@ module Pipedrive
         res = get "/persons/#{id}/deals"
         new(res.parsed_response)
       end
+
+      def find_by_name(name, opts = {})
+        res = get "/persons", body: {"term": name}
+        new(res.parsed_response)
+      end
+
+      def find_by_email(email, opts = {})
+        res = get "/persons", body: {"term": email, "search_by_email": true}
+        new(res.parsed_response)
+      end
     end
   end
 end
