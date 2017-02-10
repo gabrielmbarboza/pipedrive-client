@@ -1,10 +1,8 @@
-require "httparty"
-
 module Pipedrive
   class Person < Base
     class << self
       def all(opts = {})
-        get("/persons")
+        get "/persons"
       end
 
       def find(id)
