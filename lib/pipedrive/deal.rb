@@ -10,7 +10,7 @@ module Pipedrive
       end
 
       def find_by_name(name)
-        res = get "/deals", body: {"term", name}
+        res = get "/deals", body: {"term": name}
         new(res.parsed_response)
       end
 
