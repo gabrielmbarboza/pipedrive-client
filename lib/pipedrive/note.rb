@@ -11,7 +11,8 @@ module Pipedrive
       end
 
       def add(opts = {})
-        post "/notes", body: opts
+        res = post "/notes", body: opts
+        new(res.parsed_response)
       end
 
       def update(opts = {})

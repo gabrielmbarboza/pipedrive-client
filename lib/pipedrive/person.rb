@@ -11,7 +11,8 @@ module Pipedrive
       end
 
       def add(opts = {})
-        post "/persons", body: opts
+        res = post "/persons", body: opts
+        new(res.parsed_response)
       end
 
       def update(id, opts = {})
@@ -28,12 +29,12 @@ module Pipedrive
       end
 
       def find_by_name(name, opts = {})
-        res = get "/persons", body: {"term": name}
+        res = get "/persons/find", query: {term: name}.merge!(opts)
         new(res.parsed_response)
       end
 
-      def find_by_email(email, opts = {})
-        res = get "/persons", body: {"term": email, "search_by_email": true}
+      def find_by_email(email)
+        res = get "/persons/find", query: {term: email, search_by_email: true}
         new(res.parsed_response)
       end
     end

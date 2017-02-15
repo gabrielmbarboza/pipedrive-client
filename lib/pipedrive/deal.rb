@@ -10,7 +10,7 @@ module Pipedrive
       end
 
       def find_by_name(name)
-        res = get "/deals", body: {"term", name}
+        res = get "/deals", body: {"term": name}
         new(res.parsed_response)
       end
 
@@ -25,7 +25,8 @@ module Pipedrive
       end
 
       def add(opts = {})
-        post "/deals", body: opts
+        res = post "/deals", body: opts
+        new(res.parsed_response)
       end
 
       def update(opts = {})
