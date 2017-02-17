@@ -2,7 +2,8 @@ module Pipedrive
   class Person < Base
     class << self
       def all(opts = {})
-        get "/persons"
+        res = get "/persons"
+        normalize_response(res).collect { |person| new(person) }
       end
 
       def find(id)

@@ -25,6 +25,14 @@ module Pipedrive
       def authenticate(token)
         default_params api_token: token
       end
+
+      def normalize_response(res)
+        if res.parsed_response["success"] == true
+          r = res.parsed_response["data"]
+        else
+          r = res.parsed_response["error"]
+        end
+      end
     end
   end
 end
