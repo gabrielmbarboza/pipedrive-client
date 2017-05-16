@@ -35,7 +35,19 @@ module Pipedrive
       end
 
       def find_by_email(email)
-        res = get "/persons/find", query: {term: email, search_by_email: true}
+        email_pattern = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/
+
+        if email.nil? || email.empty?
+          raise "Email address can not be blank."
+        end
+
+        unless email_pattern.match(email)
+          raise "Email address invalid."
+        end
+
+        user_email = email.split("@").first
+
+        res = get "/persons/find", query: {term: user_email}
         new(res.parsed_response)
       end
     end
