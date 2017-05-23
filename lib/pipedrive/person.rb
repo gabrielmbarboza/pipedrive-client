@@ -48,6 +48,15 @@ module Pipedrive
         user_email = email.split("@").first
 
         res = get "/persons/find", query: {term: user_email}
+        
+        data = res["data"]
+
+        if (data && data.size > 1 )
+          res["data"] = data.collect { |person|
+            if person["email"] == email then person end
+          }
+        end
+        
         new(res.parsed_response)
       end
     end
